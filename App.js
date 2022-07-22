@@ -1,11 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import tw from "tailwind-react-native-classnames";
+import { StyleSheet, Text, View } from "react-native";
+import Thought from "./components/Thoughts";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <View style={tw`mt-4 mx-5`}>
+        <Text style={tw`text-blue-500 text-2xl font-bold`}>Thoughts</Text>
+        <View style={{ paddingVertical: 10 }}>
+          <Thought />
+          <Thought />
+          <Thought />
+          <Thought />
+        </View>
+      </View>
     </View>
   );
 }
@@ -13,8 +21,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
   },
 });
